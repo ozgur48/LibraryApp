@@ -1,4 +1,4 @@
-package com.turkcell.libraryApp.domain.member.model;
+package com.turkcell.libraryApp.domain.author.model;
 
 public record Name(String value) {
     public Name{

@@ -3,12 +3,11 @@ package com.turkcell.libraryApp.infrastructure.persistence.member;
 import com.turkcell.libraryApp.domain.member.model.Member;
 import com.turkcell.libraryApp.domain.member.model.MemberId;
 import com.turkcell.libraryApp.domain.member.repository.MemberRepository;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-
-import static java.util.stream.Collectors.toList;
 
 @Repository
 public class MemberRepositoryAdapter implements MemberRepository {
@@ -49,7 +48,9 @@ public class MemberRepositoryAdapter implements MemberRepository {
 
     @Override
     public List<Member> findAllPaged(Integer pageIndex, Integer pageSize) {
-        return List.of();
+        return jpaMemberRepository.findAll(PageRequest.of(pageIndex,pageSize))
+                .stream().map(memberEntityMapper::toDomain)
+                .toList();
     }
 
     @Override

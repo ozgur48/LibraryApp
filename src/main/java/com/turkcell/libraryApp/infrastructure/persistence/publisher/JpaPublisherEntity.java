@@ -15,6 +15,8 @@ public class JpaPublisherEntity {
     @Column(columnDefinition = "uuid")
     private UUID id;
 
+
+
     @Column(nullable = false)
     @Size(min=1, max = 255)
     private String name;
@@ -32,5 +34,16 @@ public class JpaPublisherEntity {
 
     public String address() {
         return address;
+    }
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

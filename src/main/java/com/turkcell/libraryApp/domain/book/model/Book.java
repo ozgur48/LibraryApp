@@ -43,7 +43,11 @@ public class Book {
                 publisherId
                 );
     }
-    public static Book rehydrate(BookId bookId, Title title, Language language, BookStatus bookStatus, Year year, TotalCopies totalCopies, AvailableCopies availableCopies, Isbn isbn, AuthorId authorId, PublisherId publisherId){
+    public static Book rehydrate(BookId bookId, Title title,
+                                 Language language, BookStatus bookStatus,
+                                 Year year, TotalCopies totalCopies,
+                                 AvailableCopies availableCopies, Isbn isbn,
+                                 AuthorId authorId, PublisherId publisherId){
         return new Book(
                 bookId,
                 title,

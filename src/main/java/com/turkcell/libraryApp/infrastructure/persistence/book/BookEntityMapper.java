@@ -4,6 +4,7 @@ import com.turkcell.libraryApp.domain.author.model.AuthorId;
 import com.turkcell.libraryApp.domain.book.model.*;
 import com.turkcell.libraryApp.domain.publisher.model.PublisherId;
 import com.turkcell.libraryApp.infrastructure.persistence.author.JpaAuthorEntity;
+import com.turkcell.libraryApp.infrastructure.persistence.publisher.JpaPublisherEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
@@ -24,6 +25,10 @@ public class BookEntityMapper {
         JpaAuthorEntity authorRef = new JpaAuthorEntity();
         authorRef.setId(book.authorId().value());
         jpaBookEntity.setAuthor(authorRef);
+
+        JpaPublisherEntity publisherRef = new JpaPublisherEntity();
+        publisherRef.setId(book.publisherId().value());
+        jpaBookEntity.setPublisher(publisherRef);
 
 
         return jpaBookEntity;

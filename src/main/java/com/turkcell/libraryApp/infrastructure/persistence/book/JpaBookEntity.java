@@ -133,6 +133,4 @@ public class JpaBookEntity {
         this.publisher = publisher;
     }
 
-
-
 }

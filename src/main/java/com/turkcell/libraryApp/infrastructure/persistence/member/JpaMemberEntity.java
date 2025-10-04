@@ -24,8 +24,8 @@ public class JpaMemberEntity {
     @Size(min=7, max=15)
     private String phone;
 
-    @Embedded
-    private JpaAddress address;
+    @Column(nullable = false, length = 255)
+    private String address;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -65,11 +65,11 @@ public class JpaMemberEntity {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public JpaAddress address() {
+    public String address() {
         return address;
     }
 
-    public void setAddress(JpaAddress address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

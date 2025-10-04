@@ -12,7 +12,7 @@ public class MemberEntityMapper {
         memberEntity.setName(member.name().value());
         memberEntity.setEmail(member.email().value());
         memberEntity.setPhone(member.phone().value());
-        memberEntity.setAddress(new JpaAddress(member.address().street(), member.address().city(), member.address().zipCode(), member.address().country()));
+        memberEntity.setAddress(member.address().value());
         memberEntity.setMemberShipLevel(member.memberShipLevel());
         memberEntity.setMemberStatus(member.memberStatus());
         return memberEntity;
@@ -23,7 +23,7 @@ public class MemberEntityMapper {
                 new Name(entity.name()),
                 new Email(entity.email()),
                 new Phone(entity.phone()),
-                new Address(entity.address().street(), entity.address().city(), entity.address().zipCode(), entity.address().country()),
+                new Address(entity.address()),
                 entity.memberShipLevel(),
                 entity.memberStatus()
         );

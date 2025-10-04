@@ -13,12 +13,12 @@ public class Publisher {
         this.address = address;
     }
 
-    private static Publisher create(Name name, Address address){
+    public static Publisher create(Name name, Address address){
         return new Publisher(PublisherId.generate(),
                 name,
                 address);
     }
-    private static Publisher rehdyrate(PublisherId publisherId,Name name, Address address){
+    public static Publisher rehdyrate(PublisherId publisherId,Name name, Address address){
         return new Publisher(
                 publisherId,
                 name,
@@ -28,5 +28,15 @@ public class Publisher {
         Objects.requireNonNull(newAdress);
         this.address = newAdress;
     }
+    public PublisherId id() {
+        return id;
+    }
 
+    public Name name() {
+        return name;
+    }
+
+    public Address address() {
+        return address;
+    }
 }

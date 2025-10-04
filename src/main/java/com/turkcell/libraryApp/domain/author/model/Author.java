@@ -12,10 +12,10 @@ public class Author {
         this.name = name;
         this.surname = surname;
     }
-    private static Author create(Name name, Surname surname){
+    public static Author create(Name name, Surname surname){
         return new Author(AuthorId.generate(), name, surname);
     }
-    private static Author rehydrate(AuthorId id ,Name name, Surname surname){
+    public static Author rehydrate(AuthorId id ,Name name, Surname surname){
         return new Author(id, name, surname);
     }
 
